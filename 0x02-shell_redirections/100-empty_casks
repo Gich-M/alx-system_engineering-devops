@@ -1,2 +1,1 @@
-#!bin/bash
-find . -type f -empty -o -tpye d -empty
+find . -type f -empty -printf %fn -o -type d -empty -printf %fn
