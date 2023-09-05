@@ -1,1 +1,2 @@
-find . type -f empty -o tpye -d empty
+#!bin/bash
+find . -type f -empty -o -tpye d -empty
