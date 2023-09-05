@@ -1,2 +1,3 @@
 #!/bin/bash
-find . -type f -empty -printf %fn -o -type d -empty -printf %fn
+find . \( -type f -empty -printf '%f\n' \) -o \( -type d -empty -printf '%f\n' \)
+
