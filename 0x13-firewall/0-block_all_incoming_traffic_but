@@ -1,4 +1,5 @@
-# Install ufw and configure to block al incoming traffic except 22, 443 & 80.
+# Install ufw and configure to block al incoming traffic
+# except 22, 443 & 80.
 sudo apt-get install ufw
 sudo ufw status
 sudo ufw enable -y
