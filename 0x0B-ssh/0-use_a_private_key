@@ -1,3 +1,8 @@
 #!/usr/bin/env bash
+<<<<<<< HEAD
 # Uses ssh to connect to the server using the private key ~/.ssh/chool with the user ubuntu
 ssh -i ~/.ssh/school ubuntu@18.234.168.140
+=======
+# Connects to your server using the private key ~/.ssh/school with the user ubuntu.
+ssh -i ~/.ssh/school ubuntu@18.234.168.140
+>>>>>>> e2c97909e67fa5bfcef83e12f7c88ca03a8ae314
