@@ -1,1 +1,1 @@
-firewalls
+firewall_configuration
