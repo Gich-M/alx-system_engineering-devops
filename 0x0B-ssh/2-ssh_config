@@ -1,0 +1,4 @@
+# ssh config file (connects to server without a password)
+Host *
+      PasswordAuthentication no
+      IdentifyFile ~/.ssh/school    
