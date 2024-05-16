@@ -1,13 +1,6 @@
-<<<<<<< HEAD
-# ssh config file (connects to server without a password)
-Host *
-      PasswordAuthentication no
-      IdentifyFile ~/.ssh/school    
-=======
 #!/usr/bin/env bash
 # Configure SSH configuration file for the local SSH client to
 # 	meet needs so that connects to server without a password
 HOST *
 	PasswordAuthentication no
 	IdentifyFile ~/.ssh/school
->>>>>>> e2c97909e67fa5bfcef83e12f7c88ca03a8ae314
