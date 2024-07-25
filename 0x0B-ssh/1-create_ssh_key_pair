@@ -3,4 +3,4 @@
     # Name: school
     # Number of bits: 4096
     # passphrase: betty
-ssh-keygen -t rsa -b 4096 -C school -N betty
+ssh-keygen -b 4096 -f school -N betty
