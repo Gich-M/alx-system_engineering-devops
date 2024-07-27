@@ -3,10 +3,10 @@
 # Confgures Nginx server so that /redirect_me redirects to another page
 apt-get -y update
 apt-get -y install nginx
-sudo ufw alow 'Nginx HTTP'
+sudo ufw allow 'Nginx HTTP'
 mkdir -p /var/www/html/
 sudo chmod -R 755 /var/www
-echo 'Hello World!' | sudo tee /var/ww/html/index.html
+echo 'Hello World!' | sudo tee /var/www/html/index.html
 SERVER_CONFIG=\
 "server {
 	listen 80 default_server;
@@ -17,8 +17,8 @@ SERVER_CONFIG=\
 	location / {
 		try_files \$uri \$uri/ = 404;
 	}
-	location /redirect_me {
-		return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+	if (\$request_name ~ redirect_me) {
+		rewrite ^ https://www.youtube.com/watch?v=QH2-TGUlwu4;
 	}
 }"
 
