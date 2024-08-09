@@ -3,8 +3,21 @@
 # Configure Nginx so that its HTTP response contains a custom header (on web-01 and web-02)
 	# Name of custom HTTP header must be X-Served-By
 	# Value of the custom HTTP header must be the hostname of the server Nginx is running on
-apt-get -y update
-apt-get -y install nginx
-HOSTNAME=$(hostname)
-sed -i "s/server_name _;/server_name _;\n    \tadd_header X-Served-By $HOSTNAME;/"
+apt-get update -y
+apt-get install nginx -y
+
+echo "Hello World!" > /var/www/html/index.nginx-debian.html
+echo "Ceci n'est pas une page" > /usr/share/nginx/html/custom_404.html
+
+sed -i '/server_name _;/a \
+    rewrite ^/redirect_me https://github.com/Tolulope05 permanent; \
+    error_page 404 /custom_404.html; \
+    location = /custom_404.html { \
+        root /usr/share/nginx/html; \
+        internal; \
+    }' /etc/nginx/sites-available/default
+
+sed -i '/include \/etc\/nginx\/sites-enabled\/\*;/a \
+    add_header X-Served-By "$HOSTNAME";' /etc/nginx/nginx.conf
+
 service nginx start
