@@ -1,1 +1,1 @@
-shell project
+web stack debugging_0
