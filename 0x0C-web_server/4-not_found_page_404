@@ -21,6 +21,6 @@ echo "server {
    location = /404.html{
       internal;
    }
-}" > default
-sudo mv -f default /etc/nginx/sites-available/default
-sudo service nginx restart
+}" > /etc/nginx/sites-available/default
+
+service nginx restart
