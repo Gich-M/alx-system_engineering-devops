@@ -3,7 +3,7 @@
 # Display information about subdomains.
 
 dns_info () {
-    line=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tr '\t' '\n' | tail -2 | tr '\n' ' ')
+    line=$(dig "$2"."$1" | grep -A1 'ANSWER SECTION:' | tail -n 1 | awk '{print $4, $5}')
     echo "$2 $line" | awk '{print "The subdomain " $1 " is a " $2 " record and points to " $3}'
 }
 
