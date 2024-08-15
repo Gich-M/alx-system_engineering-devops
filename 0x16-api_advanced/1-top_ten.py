@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import requests
-
+"""Queries and returns first 10 hot posts of a given subreddit"""
 
 def top_ten(subreddit):
     """Prints the titles of the 10 hottest posts for a given subreddit."""
