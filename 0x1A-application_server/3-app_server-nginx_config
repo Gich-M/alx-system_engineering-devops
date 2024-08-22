@@ -4,12 +4,16 @@ server {
     add_header X-Served-By 518770-web-01;
     root   /var/www/html;
     index  index.html index.htm;
-
+    
     # Server IP as domain name
     server_name 34.207.237.30;
 
+    location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
+	proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
+    }
+
     location /airbnb-onepage/ {
-        proxy_pass http://127.0.0.1:5000;
+	proxy_pass http://127.0.0.1:5000;
     }
 
     location /hbnb_static {
@@ -27,3 +31,4 @@ server {
       internal;
     }
 }
+
